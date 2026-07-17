@@ -7,6 +7,6 @@ load_dotenv()
 # Initilaise LLM
 llm = GoogleGenerativeAI(model="gemini-3.5-flash")
 
-result = llm.invoke("What is United Nations?")
+result = llm.invoke("What is the capital of India?")
 
 print(result)
