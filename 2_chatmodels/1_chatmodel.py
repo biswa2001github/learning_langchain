@@ -3,9 +3,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-llm = ChatGoogleGenerativeAI(model='gemini-3.5-flash', temperature=2.0)
+llm = ChatGoogleGenerativeAI(model='gemini-3.5-flash', temperature=0)
 
-result = llm.invoke('Suggest me 5 top engineering branches.')
+result = llm.invoke('Write a five line poem on trees.')
 
 print(result.text)
 
