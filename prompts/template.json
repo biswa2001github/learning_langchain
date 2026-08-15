@@ -1,0 +1,17 @@
+{
+    "name": null,
+    "input_variables": [
+        "length",
+        "paper",
+        "style"
+    ],
+    "optional_variables": [],
+    "output_parser": null,
+    "partial_variables": {},
+    "metadata": null,
+    "tags": null,
+    "template": "\n    Summarize the research paper \"{paper}\".\n\n    Requirements:\n    - Style: {style}\n    - Length: {length}\n\n    Include:\n    1. Main idea\n    2. Key contributions\n    3. How it works\n    4. Important results\n    5. Conclusion\n\n    Use clear, well-structured markdown and tailor the explanation to the selected style and length.\n    ",
+    "template_format": "f-string",
+    "validate_template": false,
+    "_type": "prompt"
+}
