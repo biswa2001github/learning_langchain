@@ -1,5 +1,6 @@
 from dotenv import load_dotenv
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
+from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 
 load_dotenv()
 
@@ -8,15 +9,17 @@ llm = HuggingFaceEndpoint(
 )
 
 model = ChatHuggingFace(llm=llm)
-chat_history = []
+chat_history = [
+    SystemMessage(content="You are a helpful AI assistant.")
+]
 
 while True:
     user_ip = input("You: ")
-    chat_history.append(user_ip)
+    chat_history.append(HumanMessage(content=user_ip))
     if user_ip == 'exit':
         break
     result = model.invoke(chat_history)
-    chat_history.append(result.content)
+    chat_history.append(AIMessage(content=result.content))
     print("AI: ", result.content)
 
 print(f"Chat history: {chat_history}")
